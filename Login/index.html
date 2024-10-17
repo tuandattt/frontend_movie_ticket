@@ -2,14 +2,13 @@
 <html lang="en" dir="ltr">
    <head>
       <meta charset="utf-8">
-      <title>Login Form Design | wwww.codingdung.com</title>
+      <title>Login and Register Form | www.codingdung.com</title>
       <link rel="stylesheet" href="style.css">
    </head>
    <body>
-      <div class="wrapper">
-         <div class="title">
-            Sign in
-         </div>
+      <!-- Form Login -->
+      <div id="loginForm" class="wrapper">
+         <div class="title">Sign in</div>
          <form action="#">
             <div class="field">
                <input type="text" required>
@@ -32,9 +31,54 @@
                <input type="submit" value="Login">
             </div>
             <div class="signup-link">
-               Not a member? <a href="#">Sign up now</a>
+               Not a member? <a href="#" onclick="toggleForm()">Sign up now</a>
             </div>
          </form>
       </div>
+
+      <!-- Form Sign Up -->
+      <div id="signupForm" class="wrapper" style="display: none;">
+         <div class="title">Sign Up</div>
+         <form action="#">
+            <div class="field">
+               <input type="text" required>
+               <label>Full Name</label>
+            </div>
+            <div class="field">
+               <input type="email" required>
+               <label>Email Address</label>
+            </div>
+            <div class="field">
+               <input type="password" required>
+               <label>Password</label>
+            </div>
+            <div class="field">
+               <input type="password" required>
+               <label>Confirm Password</label>
+            </div>
+            <div class="field">
+               <input type="submit" value="Register">
+            </div>
+            <div class="signup-link">
+               Already a member? <a href="#" onclick="toggleForm()">Login now</a>
+            </div>
+         </form>
+      </div>
+
+      <!-- JavaScript -->
+      <script>
+         function toggleForm() {
+            var loginForm = document.getElementById("loginForm");
+            var signupForm = document.getElementById("signupForm");
+
+            if (loginForm.style.display === "none") {
+               loginForm.style.display = "block";
+               signupForm.style.display = "none";
+            } else {
+               loginForm.style.display = "none";
+               signupForm.style.display = "block";
+            }
+         }
+      </script>
    </body>
 </html>
